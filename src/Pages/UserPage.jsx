@@ -8,9 +8,9 @@ function UserPage() {
 
     const { userId } = useParams()
 
-    const [user, loading, error] = useFetchUser(userId)
+    const [user, loading] = useFetchUser(userId)
 
-    if (!user) {
+    if (!user || loading) {
         return (
             <div>Loading</div>
         )

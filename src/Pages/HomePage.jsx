@@ -4,7 +4,15 @@ import User from '../Components/User'
 
 export default function HomePage() {
 
-    const [users, loading, error] = useFetchUsers() 
+    const [users, loading, ] = useFetchUsers() 
+
+    if (!users || loading) {
+        return (
+            <div>
+                Loading...
+            </div>
+        )
+    } 
 
   return (
     <div className='bg-white'>

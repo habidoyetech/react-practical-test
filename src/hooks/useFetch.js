@@ -1,11 +1,11 @@
-import { useEffect, useState, useTransition } from "react"
+import { useEffect, useState } from "react"
 
 
 export const useFetchUsers = () => {
 
     const [users, setUsers] = useState(null);
     const [loading, setLoading] = useState(true);
-    const [error, setError] = useState(null);
+    
            
     useEffect(() => { 
         const fetchUsers = async () => {
@@ -15,10 +15,10 @@ export const useFetchUsers = () => {
                     throw new Error(`HTTP error! status: ${response.status}`);
                 }
                 const result = await response.json(); 
-                console.log(result)
+                
                 setUsers(result); 
             } catch (err) {
-                setError(err.message); 
+                window.alert(err.message) 
             } finally {
                 setLoading(false); 
             }
@@ -27,7 +27,7 @@ export const useFetchUsers = () => {
         fetchUsers();
     }, []);
 
-    return [users, loading, error]
+    return [users, loading]
 }
 
 export const useFetchUser = (userId) => {
