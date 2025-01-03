@@ -17,7 +17,7 @@ export default function HomePage() {
                 {
                     users?.map((user) => {
                         return (
-                            <User key={user.id} name={user.name} email={user.email} />
+                            <User key={user.id} user={user} />
                         )
                     })
                 }

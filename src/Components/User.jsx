@@ -1,6 +1,8 @@
 import React from 'react'
+import { Link } from 'react-router'
 
-function User({name, email}) {
+function User({user}) {
+
   return (
     <>
         <div class="items-center bg-white rounded-lg shadow-lg flex flex-col sm:flex-row justify-between cursor-pointer p-5 gap-5">
@@ -12,18 +14,18 @@ function User({name, email}) {
                 </a>
                 <div class=" text-center sm:text-left">
                     <h3 class="text-xl font-bold tracking-tight text-gray-900">
-                        <a href="#">{name}</a>
+                        <a href="#">{user.name}</a>
                     </h3>
-                    <span class="text-gray-500 lowercase">{email}</span>
+                    <span class="text-gray-500 lowercase">{user.email}</span>
                     
                 </div>
 
             </div>
               
             <div>
-            <a class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center">
+            <Link to={`/user/${user.id}`} class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center">
                 Veiw Details
-            </a>
+            </Link>
 
             </div>
           </div> 
