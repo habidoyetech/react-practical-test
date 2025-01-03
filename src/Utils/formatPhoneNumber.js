@@ -50,7 +50,7 @@ export const formatPhoneNumber = (phoneNumber) => {
     let countryCode = '1';
     let remaining = cleaned;
     
-    for (const [code, country] of Object.entries(countryCodes)) {
+    for (const [code] of Object.entries(countryCodes)) {
       if (cleaned.startsWith(code)) {
         countryCode = code;
         remaining = cleaned.slice(code.length);
