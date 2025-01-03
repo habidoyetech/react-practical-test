@@ -1,4 +1,4 @@
-import { useEffect, useId, useState } from "react"
+import { useEffect, useState } from "react"
 
 
 export const useFetchUsers = () => {
@@ -25,7 +25,7 @@ export const useFetchUsers = () => {
         };
 
         fetchUsers();
-    }, [useId]);
+    }, []);
 
     return [users, loading]
 }
@@ -56,7 +56,7 @@ export const useFetchUser = (userId) => {
         };
 
         fetchUser();
-    }, []);
+    }, [userId]);
 
     return [user, loading, error]
 }
